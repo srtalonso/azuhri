@@ -1,1 +1,58 @@
-<p>chat works!</p>
+<!-- Vamos a crear nuestro chat-->
+ <!-- Contenedor principal del chat con atributo aria-live para accesibilidad-->
+  <!-- El contenido se actuliza sin actulizar la pagina a tiempo real: notificaciones, resultados de busqueda-->
+ <div class="chat-container" aria-live="polite">
+    <p-card header ="Chat con el Asistente" class="chat-card">
+    <!-- Panel con scroll para mostrar los mensajes a la altura de la vista 60%-->
+     <!-- Componente de la barra de  desplazamiento personalizada -->
+    <p-scrollPanel #scroll
+        [style]="{ height: '60vh'}"
+        class="chat-window">
+    
+    <!-- Necesitamos un div que nos lea los mensajes y pasarselos a la IA ( Recorre el array de mensajes y renderiza cada uno)--> 
+     <!--*ngFor es el elemento que realiza el recorrido -->
+    <div
+        *ngFor="let m of messages"
+        class="message"
+        [ngClass]="m.from"> 
+
+        <!-- Burbujas de los mensajes-->
+         <div class="message-header">
+            <strong>{{ m.from === 'user' ? 'Tu' : 'Azuhri' }}</strong>
+            <span class="timestamp">                    <!-- Hora exavta cuando se envia los mensajes -->
+            {{ m.timestamp | date: 'shortTime'}}
+            </span>
+        </div>
+
+        <!-- Cuerpo del chat, con soporte para markdown simple-->
+        <div class="message-body">
+            <span [innerHTML]="m.text | simpleMarkdown"></span>
+        </div>
+    </div>
+    </p-scrollPanel>
+
+    <!-- SPINER -->
+    <div *ngIf="loading" class="spinner-ovalay"> 
+        <p-progressSpiner><p-progressSpiner/>
+    </div>
+
+    <!-- Area de entrada de usuario // dond el usuario escribe -->
+    <div class="input">
+        <input
+            inputText
+            [(ngModel)]="userInput"
+            placeholder="Escribe tu mensaje"
+            [disabled]="loading"
+            (keyup.enter)="send()"/>
+
+            <button
+                pButton
+                type="submit"
+                label="Enviar"
+                icon="pi pi-send"
+                (click)="send()"
+                [disabled]="!userIput.trim() || loading">           <!-- Par que no recarge mientras esta metiendo el texto-->
+            </button>
+    </div>
+    </p-card>
+ </div>
