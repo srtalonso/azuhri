@@ -1,1 +1,23 @@
-<p>header works!</p>
+<!-- Toolbar principal con una clase para su stilo -->
+<p-toolbar class="app-toolbar">
+    <img
+        src="assets/images/logo.png"
+        alt="azuhri"
+        height="32"/>
+<!-- Titulo de nuestra aplicacion -->
+    <span class="toolbar-title">Azuhri</span>
+    <!-- Es un boton para alternar el tema claro/oscuro -->
+    <!-- pButton = Directiva de PrimeNG para aplicar stilos al boton-->
+    <!-- pRipple = Directiva de PrimeNG para efecto visual clic -->
+    <!-- Es de tipo Button con un evento (click)="toggleTheme()" -->
+    <!-- toggleTheme() es un metodo del componente TypeScrit para altrenar de claro oscuro-->
+
+    <button pButton PRipple type="button" (click)="toggleTheme()"> 
+    <!-- Icono y texto dinamico segun el estado darkMode -->
+     <!-- interpolacion {{...}}  muestra un emijie de sol si es modo calro, luna sería modo oscuro
+        || (darkMode === true) o una luna si no lo esta-->
+    {{ darkMode ? '☀️ ' : '🌙 ' }}
+    </button>
+
+</p-toolbar>
+
