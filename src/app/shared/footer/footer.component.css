@@ -1,0 +1,8 @@
+/*Estilos generales para el footer*/
+:host ::ng-deep .app-toolbar.footer{
+    display: flex !important;           /**/
+    align-items: center !important;  /*con el importa le decirmso que apli los estiles q le debemos independientemente de sus carcteristicas*/
+    justify-content: flex-end !important;
+    height: 4rem; 
+    padding: 0 1rem;
+}

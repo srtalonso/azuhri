@@ -1,15 +1,15 @@
 /*Estilos generales para el header*/
-:host ::ng-deep .app-toolbark{
+:host ::ng-deep .app-toolbar{
     position: relative;                 /*Se van aglomerar*/
     display: flex !important;           /**/
-    align-items: center I !important;  /*con el importa le decirmso que apli los estiles q le debemos independientemente de sus carcteristicas*/
+    align-items: center !important;  /*con el importa le decirmso que apli los estiles q le debemos independientemente de sus carcteristicas*/
     justify-content: flex-end !important;
     height: 4rem; 
     padding: 0 1rem;
 }
 
 
-.toolbar-tile{
+.toolbar-title{
 font-size: 1.25rem;
 font-weight: 600;
 margin: 0;
