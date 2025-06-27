@@ -1,5 +1,13 @@
+<!-- ES LA CABECERA FIJA DE LA APLICACION -->
 <app-header></app-header>
 
-<router-outlet />
+<!-- Area principal que contiene al chat y lo centra tanto vertical como horizontal -->
+<main class="main-content">
+    <!-- Wrapper para que el chat tenga ancho maximo y altura completa -->
+    <div class="chat-wrapper">
+        <router-outlet />
+    </div>
+</main>
 
+<!-- ES PIE FIJO DE LA APLICACION -->
 <app-footer></app-footer>

@@ -1,0 +1,27 @@
+:host{
+    display: flex;                      /*Lo coloca todo de manera almonica, distribuye todo*/
+    flex-direction: column;
+    height: 100vh;                      /*Atura total de la ventana del navegador*/   
+    overflow: hidden;                   /*Evita el scroll en el componente principal; que se vea todo */
+}
+
+.main-content{
+   flex: 1;                            /*Ocupa el espacio restante entre el header y el footer*/
+   display: flex;                       /*Centrar el contenido*/
+   justify-content: center;             /*Centra horizontalmente a los hijos*/
+   align-items: flex-start;             /*Los coloca al inicio vertical (parte superiro)*/
+   padding: 1rem;
+   overflow: hidden;                    /*Evita scroll interno en el area principal*/
+
+}
+
+
+/*Chat principal*/
+.chat-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+}
+
