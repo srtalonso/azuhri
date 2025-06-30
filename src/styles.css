@@ -11,7 +11,7 @@
   --card-bg: #ffffff;              /* Blanco puro para mensajes */
   --card-text: #3a4a3f;            /* Verde oscuro */
   --input-bg: #f1e8d5;             /* Beige dorado (input) */
-  --input-text: #6d5d4a;           /* Marrón claro (antes era #5a4a42, ahora más suave) */
+  --input-text: #6d5d4a;           /* Marrón claro */
   --border: #e3d0a8;               /* Dorado claro (bordes) */
   --primary: #a78a7f;              /* Rosa terracota */
   --accent: #c0a988;               /* Dorado satinado */
@@ -36,13 +36,14 @@ body {
   color: var(--text-color);           /* Color de texto global */
   font-family: 'Inter', sans-serif;   /* Fuente base */
   transition: background 0.3s, color 0.3s; /* Transición suave al cambiar tema */
-}
+} 
 :host {
   display: flex;                       /* Flex container vertical */
   flex-direction: column;              /* Columnas: header, main, footer */
   height: 100vh;                       /* Altura completa de la ventana */
   overflow: hidden;                    /* Evita scroll global */
-}
+} 
+
 .main-content {
   flex: 1;                             /* Ocupa espacio restante */
   display: flex;                       /* Centrado de contenido */
@@ -61,11 +62,13 @@ body {
   color: var(--menu-text) !important;    /* Texto de menús y toolbars */
   transition: background 0.3s, color 0.3s;
 }
+
 button[pButton] {
   background:    var(--primary)    !important; /* Botones primarios */
   border-color:  var(--primary)    !important;
   color:         var(--menu-text)  !important;
 }
+
 .p-card {
   background:   var(--card-bg)     !important; /* Tarjetas de contenido */
   color:        var(--card-text)   !important;
@@ -78,6 +81,7 @@ button[pButton] {
   from { opacity: 0; transform: translateY(10px); } /* Fade in desde abajo */
   to   { opacity: 1; transform: translateY(0); }
 }
+
 .spinner-overlay {
   position: absolute;                 /* Cubre todo el contenedor */
   top: 0; left: 0; right: 0; bottom: 0;
@@ -90,7 +94,7 @@ button[pButton] {
 /* 5) Estilos de mensajes genéricos */
 .message {
   animation: fadeInUp 0.2s ease-out;  /* Animación al aparecer cada mensaje */
-  margin-bottom: 0.75rem;             /* Separación entre mensajes */
+  margin-bottom: 1.75rem;             /* Separación entre mensajes */
 }
 .message-body {
   background: var(--card-bg);         /* Fondo de burbuja de mensaje */
@@ -109,12 +113,14 @@ button[pButton] {
   background: var(--input-bg);
   transition: background 0.3s, border-color 0.3s;
 }
+
 .input-area input[pInputText] {
   flex: 1;                            /* Ocupa espacio restante */
   background: var(--input-bg) !important;
   color: var(--input-text) !important;
   border: 1px solid var(--border) !important;
 }
+
 .input-area button[pButton] {
   background:    var(--primary)    !important;
   border-color:  var(--primary)    !important;
