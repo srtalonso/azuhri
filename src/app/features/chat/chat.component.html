@@ -33,7 +33,8 @@
 
     <!-- SPINER -->
     <div *ngIf="loading" class="spinner-ovalay"> 
-        <p-progressSpiner><p-progressSpiner/>
+        <p-progressSpinner>
+        </p-progressSpinner> 
     </div>
 
     <!-- Area de entrada de usuario // dond el usuario escribe -->
@@ -51,7 +52,7 @@
                 label="Enviar"
                 icon="pi pi-send"
                 (click)="send()"
-                [disabled]="!userIput.trim() || loading">           <!-- Par que no recarge mientras esta metiendo el texto-->
+                [disabled]="!userInput.trim() || loading">           <!-- Para que no recarge mientras esta metiendo el texto-->
             </button>
     </div>
     </p-card>

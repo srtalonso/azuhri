@@ -1,0 +1,60 @@
+/* Contenedor principal del chat: ocupa todo el alto y organiza elementos en columna */
+.chat-container {
+  height: 100%;               /* Se extiende al 100% del contenedor padre */
+  display: flex;              /* Utilizamos Flexbox */
+  flex-direction: column;     /* Orientación vertical */
+}
+
+/* Tarjeta interna del chat: área que contendrá la conversación */
+.chat-card {
+  display: flex;              /* Flexbox para estructurar su contenido */
+  flex-direction: column;     /* Elementos dispuestos en columna */
+  flex: 1;                    /* Crece para ocupar espacio disponible */
+  margin: 0;                  /* Sin márgenes (el estilo global .p-card ya añade fondo y color) */
+  border-radius: 1rem;        /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra sutil para destacar la tarjeta */
+}
+
+/* Ventana de scroll: área donde aparecen los mensajes */
+.chat-window {
+  flex: 1;                    /* Crece para llenar el espacio restante dentro de .chat-card */
+  overflow: hidden;           /* Oculta desbordes; el scroll se controla en el contenido interno */
+}
+
+/* Definimos padding y estilo del contenido dentro del scrollpanel */
+.chat-window .p-scrollpanel-content {
+  display: flex;              /* Flexbox para alinear burbujas en columna */
+  flex-direction: column;     /* Mensajes uno debajo de otro */
+  padding: 2rem;              /* Espacio interno alrededor de los mensajes */
+  background: var(--bg-page); /* Fondo según la variable de tema */
+  overflow-y: auto;           /* Scroll vertical activado cuando el contenido excede el alto */
+}
+
+/* Margen lateral extra para las burbujas de mensaje */
+.message {
+  margin: 0 1.5rem;           /* Márgenes izquierdo y derecho para separar de los bordes */
+}
+
+/* Encabezado de cada mensaje: nombre/autor y timestamp */
+.message-header {
+  display: flex;              /* Flexbox para alinear nombre y fecha */
+  justify-content: space-between; /* Separar extremos (autor a la izquierda, hora a la derecha) */
+  margin-bottom: 0.25rem;     /* Pequeño espacio debajo antes del contenido */
+}
+
+/* Estilo para la hora o timestamp del mensaje */
+.timestamp {
+  font-size: 0.8em;           /* Tamaño de fuente más pequeño */
+  opacity: 0.7;               /* Texto atenuado para no competir con el contenido principal */
+}
+
+/* Overlay de spinner de carga: cubre toda la tarjeta y centra el indicador */
+.spinner-overlay {
+  position: absolute;         /* Posicionamiento absoluto relativo al contenedor padre */
+  top: 0; left: 0; right: 0; bottom: 0; /* Se extiende a todo el contenedor */
+  display: flex;              /* Flexbox para centrar el spinner */
+  align-items: center;        /* Centrado vertical */
+  justify-content: center;    /* Centrado horizontal */
+  background: rgba(0, 0, 0, 0.1); /* Fondo semitransparente para atenuar el contenido de fondo */
+  z-index: 10;                /* Coloca el overlay por encima de otros elementos */
+}

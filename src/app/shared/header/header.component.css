@@ -1,16 +1,31 @@
-/*Estilos generales para el header*/
-:host ::ng-deep .app-toolbar{
-    position: relative;                 /*Se van aglomerar*/
-    display: flex !important;           /**/
-    align-items: center !important;  /*con el importa le decirmso que apli los estiles q le debemos independientemente de sus carcteristicas*/
-    justify-content: flex-end !important;
-    height: 4rem; 
-    padding: 0 1rem;
+/* Estilo de la barra de herramientas principal del componente */
+:host ::ng-deep .app-toolbar {
+  position: relative;             /* Permite posicionar elementos hijos de forma absoluta respecto a esta barra */
+  display: flex !important;       /* Configura un contenedor flex para ordenar sus hijos */
+  align-items: center !important; /* Alinea verticalmente todos los elementos al centro */
+  justify-content: flex-end !important; /* Coloca los elementos al final (derecha) del contenedor */
+  height: 4rem;                   /* Altura fija de la barra de herramientas */
+  padding: 0 1rem;                /* Espaciado interior horizontal de 1rem */
 }
 
+/* Grupo que contiene logo e título centrados en la barra */
+.logo-group {
+  position: absolute;             /* Fuera del flujo flex para poder centrarlo manualmente */
+  left: 50%;                      /* Posición horizontal en el 50% de la barra */
+  transform: translateX(-50%);    /* Mueve el grupo hacia atrás la mitad de su propio ancho */
+  display: flex;                  /* Contenedor flex para colocar logo y título en línea */
+  align-items: center;            /* Alinea verticalmente logo y título */
+}
 
-.toolbar-title{
-font-size: 1.25rem;
-font-weight: 600;
-margin: 0;
+/* Estilo específico de la imagen del logo dentro del grupo */
+:host ::ng-deep .logo-group img {
+  height: 32px !important;        /* Altura fija del logo para mantener proporción */
+  margin-right: 0.5rem;           /* Espacio a la derecha que separa el logo del título */
+}
+
+/* Estilo del título dentro de la toolbar */
+.toolbar-title {
+  font-size: 1.25rem;             /* Tamaño de fuente ligeramente mayor para destacar */
+  font-weight: 600;               /* Negrita semipesada */
+  margin: 0;                      /* El margen está controlado por el contenedor .logo-group */
 }
