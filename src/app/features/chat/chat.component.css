@@ -12,7 +12,7 @@
   flex: 1;                    /* Crece para ocupar espacio disponible */
   margin: 0;                  /* Sin márgenes (el estilo global .p-card ya añade fondo y color) */
   border-radius: 1rem;        /* Bordes redondeados */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra sutil para destacar la tarjeta */
+  box-shadow: 0 4px 12px #EEEFE0(0,0,0,0.1); /* Sombra sutil para destacar la tarjeta */
 }
 
 /* Ventana de scroll: área donde aparecen los mensajes */

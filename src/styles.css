@@ -4,28 +4,30 @@
 
 /* 1) Variables de color (modo claro + oscuro) */
 :root {
-  --bg-page:    #f0fdfa;
-  --text-color: #1e293b;
-  --menu-bg:    #ffffff;
-  --menu-text:  #1e293b;
-  --card-bg:    #ffffff;
-  --card-text: #1e293b;
-  --input-bg:   #ffffff;
-  --input-text: #1e293b;
-  --border:     #e2e8f0;
-  --primary:    #178cc7;
+  --bg-page: #f9f5eb;              /* Fondo blanco roto con reflejo dorado */
+  --text-color: #3a4a3f;           /* Verde oscuro (para texto general) */
+  --menu-bg: #d1b48c;              /* Dorado cálido */
+  --menu-text: #4a3a2a;            /* Marrón oscuro (contraste en menús) */
+  --card-bg: #ffffff;              /* Blanco puro para mensajes */
+  --card-text: #3a4a3f;            /* Verde oscuro */
+  --input-bg: #f1e8d5;             /* Beige dorado (input) */
+  --input-text: #6d5d4a;           /* Marrón claro (antes era #5a4a42, ahora más suave) */
+  --border: #e3d0a8;               /* Dorado claro (bordes) */
+  --primary: #a78a7f;              /* Rosa terracota */
+  --accent: #c0a988;               /* Dorado satinado */
 }
+
 body.dark {
-  --bg-page:    #1e293b;
-  --text-color: #f0fdfa;
-  --menu-bg:    #0f172a;
-  --menu-text:  #f0fdfa;
-  --card-bg:    #1e1f2b;
-  --card-text: #f0fdfa;
-  --input-bg:   #1e293b;
-  --input-text: #f0fdfa;
-  --border:     #334155;
-  --primary:    #178cc7;
+  --bg-page: #1e1a14;              /* Fondo marrón oscuro (como tierra nocturna) */
+  --text-color: #e0d6c0;           /* Beige dorado claro (legible) */
+  --menu-bg: #8a6e3d;              /* Dorado oscuro (como bronce) */
+  --menu-text: #ffffff;            /* Blanco para contraste */
+  --card-bg: #2a2620;              /* Gris-marrón oscuro (fondo de mensajes) */
+  --card-text: #e0d6c0;            /* Texto beige claro */
+  --input-bg: #2a2620;             /* Coherente con card-bg */
+  --input-text: #e0d6c0;           /* Texto claro */
+  --border: #8a7b5a;               /* Dorado apagado (bordes) */
+  --primary: #9a86a8;              /* Lavanda medio (para acciones clave) */
 }
 
 /* 2) Layout base de la aplicación */
